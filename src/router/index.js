@@ -9,6 +9,7 @@ import VueRouter from 'vue-router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import NotFound from '../views/error/404.vue'
+import BasicLayout from '@/layout/BasicLayout'
 
 Vue.use(VueRouter)
 const originalPush = VueRouter.prototype.push
@@ -26,6 +27,7 @@ const routes = [
   {
     path: '/user',
     name: 'User',
+    redirect: '/user/login',
     component: () => import('../views/user/User.vue'),
     children: [
       // 注册界面
@@ -67,12 +69,24 @@ const routes = [
     path: '/main',
     name: 'Main',
     redirect: '/main/home',
-    component: () => import('../views/main/Home.vue'),
+    component: BasicLayout,
     children: [
+      // 系统首页
       {
         path: '/main/home',
         name: 'Main',
         component: () => import('../views/main/Home.vue'),
+      },
+      // 用户管理页面
+      {
+        path: '/main/users',
+        name: 'Users',
+        component: () => import('../views/main/users/Users.vue'),
+      },
+      {
+        path: '/main/articles',
+        name: 'articles',
+        // component: () => import('../components/users/test.vue'),
       },
     ],
   },

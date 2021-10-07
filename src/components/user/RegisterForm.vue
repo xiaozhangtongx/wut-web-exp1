@@ -22,7 +22,6 @@
         ]" type="password" placeholder="密码">
         <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
       </a-input-password>
-
     </a-form-item>
     <a-form-item>
       <a-input v-decorator="[
@@ -45,13 +44,11 @@
     </a-form-item>
 
     <a-form-item>
-
       <a-date-picker placeholder="年/月/日" format="YYYY/MM/DD" v-decorator="[
           'date',
           { rules: [{ required: true, message: '请输入日期' }] },
         ]">
-        <template>
-        </template>
+        <template> </template>
       </a-date-picker>
     </a-form-item>
 
@@ -60,7 +57,6 @@
         注册
       </a-button>
     </a-form-item>
-
   </a-form>
 </template>
 
@@ -83,7 +79,6 @@ export default {
   },
 }
 </script>
-
 
 <style lang="less" scoped>
 .register-form {

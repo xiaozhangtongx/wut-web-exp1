@@ -8,9 +8,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './assets/css/global.css'
+import './assets/less/global.css'
 import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+import 'ant-design-vue/dist/antd.less'
+import 'element-ui/lib/theme-chalk/index.css'
+import { Table, TableColumn } from 'element-ui'
+import AFTableColumn from 'af-table-column'
+Vue.use(AFTableColumn)
+Vue.use(Table)
+Vue.use(TableColumn)
 
 Vue.config.productionTip = false
 Vue.use(Antd)

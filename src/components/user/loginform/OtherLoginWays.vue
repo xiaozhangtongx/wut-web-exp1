@@ -7,14 +7,14 @@
 
 <template>
   <div class="btn">
-    <a-button type="primary" icon="qq" size="large" class="qq">
+    <a-button type="primary" icon="qq" size="large" class="qq" @click="qqLogin">
       QQ登录
     </a-button>
 
-    <a-button type="primary" icon="wechat" size="large" class="wechat">
+    <a-button type="primary" icon="wechat" size="large" class="wechat" @click="wechatLogin">
       微信登录
     </a-button>
-    <a-button type="primary" icon="alipay" size="large">
+    <a-button type="primary" icon="alipay" size="large" @click="alipayLogin">
       支付宝登录
     </a-button>
 
@@ -27,7 +27,20 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    qqLogin() {
+      this.$router.push('/main/home')
+      return this.$message.success('通过qq登录成功！')
+    },
+    wechatLogin() {
+      this.$router.push('/main/home')
+      return this.$message.success('通过微信登录成功！')
+    },
+    alipayLogin() {
+      this.$router.push('/main/home')
+      return this.$message.success('通过支付宝登录成功！')
+    },
+  },
 }
 </script>
 
