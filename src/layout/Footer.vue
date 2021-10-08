@@ -6,7 +6,7 @@
 -->
 <template>
   <div>
-    <h4> WEB ©2021 Created by XiaoZhangtx</h4>
+    <h4> WEB ©2021 Created by xiaozhangtx</h4>
   </div>
 </template>
 

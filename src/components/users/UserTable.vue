@@ -41,10 +41,10 @@ export default {
     return {
       zhangsan: {
         name: '张三',
-        password: 123456,
+        password: '123456',
         email: 'zhangsan@qq.com',
         birthday: '2000-09-09',
-        money: 50,
+        money: 500,
       },
       tableData: [],
     }
@@ -52,6 +52,7 @@ export default {
   methods: {
     getData() {
       for (let i = 0; i < Math.round(Math.random() * 5 + 5); i++) {
+        this.zhangsan.password = this.zhangsan.password.replace(/^(\d{1})\d{4}(\d+)/, '$1****$2')
         this.tableData.push(this.zhangsan)
       }
     },

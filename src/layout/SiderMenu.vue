@@ -1,5 +1,5 @@
 <!--
- * @Description: 
+ * @Description: 侧边栏
  * @Version: 1.0
  * @Author: xiaozhangtx
  * @Date: 2021-10-07 14:40:53
@@ -23,10 +23,10 @@
         <span slot="title">
           <a-icon type="setting" /><span>主题定制</span>
         </span>
-        <a-menu-item key="5">
+        <a-menu-item key="5" @click="chooseTheme1">
           深蓝
         </a-menu-item>
-        <a-menu-item key="6">
+        <a-menu-item key="6" @click="chooseTheme2">
           橘黄
         </a-menu-item>
       </a-sub-menu>
@@ -46,6 +46,14 @@ export default {
     },
     titleClick(e) {
       console.log('titleClick', e)
+    },
+    chooseTheme1() {
+      this.$store.commit('theme1')
+      return this.$message.success('主题设置成功！')
+    },
+    chooseTheme2() {
+      this.$store.commit('theme2')
+      return this.$message.success('主题设置成功！')
     },
   },
 }

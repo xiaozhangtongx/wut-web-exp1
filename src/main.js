@@ -14,6 +14,7 @@ import 'ant-design-vue/dist/antd.less'
 import 'element-ui/lib/theme-chalk/index.css'
 import { Table, TableColumn } from 'element-ui'
 import AFTableColumn from 'af-table-column'
+import './assets/theme/color.less'
 Vue.use(AFTableColumn)
 Vue.use(Table)
 Vue.use(TableColumn)

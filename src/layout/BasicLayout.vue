@@ -1,14 +1,14 @@
 <!--
- * @Description: 
+ * @Description: 首页的基本布局
  * @Version: 1.0
  * @Author: xiaozhangtx
  * @Date: 2021-10-07 11:29:50
 -->
 <template>
-  <div>
+  <div :class="`theme${index}`">
     <a-layout id="basiclayout">
       <!-- header部分 -->
-      <a-layout-header style=" background: #1890FF;padding: 0 10px;">
+      <a-layout-header style="padding: 0 10px;">
         <Header />
       </a-layout-header>
       <!-- sider和content部分 -->
@@ -22,7 +22,7 @@
         </a-layout-content>
       </a-layout>
       <!-- footer部分 -->
-      <a-layout-footer style=" background: #1890FF; padding: 5px 50px;">
+      <a-layout-footer style="padding: 5px 50px;">
         <Footer />
       </a-layout-footer>
     </a-layout>
@@ -36,6 +36,12 @@ import Footer from '@/layout/Footer'
 import SiderMenu from '@/layout/SiderMenu'
 import Header from '@/layout/Header'
 export default {
+  computed: {
+    index() {
+      window.sessionStorage.setItem('index', this.$store.state.index)
+      return this.$store.state.index
+    },
+  },
   data() {
     return {}
   },
